@@ -29,14 +29,29 @@ namespace OnlineVegeFoodOrder
         /// </summary>
         public string Address { get; set; }
         #endregion
+        /// <summary>
+        /// Food Iterm List
+        /// </summary>
+        public List<FoodItem> FoodItemList = new List<FoodItem>(); // Check List Property
+
+        #region Static Variable
+        private static int lastID = 0;
+        #endregion
+
+        #region Constructor
+        public SiteAccount() {
+            Id = ++lastID;
+        }
+        #endregion
 
         #region Methods
-        public void AddFoodItem(string foodName, string flavor, string[] ingredients)
+        public void AddFoodItem(string foodName, string flavor)
         {
-            var foodItem = new FoodItem { FoodName = foodName, Flavor = flavor, Ingredients = ingredients };
+            var foodItem = new FoodItem { FoodName = foodName, Flavor = flavor};
 
-
+            FoodItemList.Add(foodItem);
         }
+
         #endregion
     }
 }

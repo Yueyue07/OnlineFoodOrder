@@ -24,7 +24,21 @@ namespace OnlineVegeFoodOrder
         /// <summary>
         /// Ingredients of this food
         /// </summary>
-        public string[] Ingredients { get; set; }
+       // public string[] Ingredients { get; set; } // Check Array Properties in C#
+        #endregion
+
+        #region Static Variable
+        private static int lastId = 0;
+        #endregion
+
+        /// <summary>
+        /// Constructor of FoodItem to Generate Id for createc food item
+        /// </summary>
+        #region Constructor
+        public FoodItem()
+        {
+            Id = ++lastId;
+        }
         #endregion
     }
 }

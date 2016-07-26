@@ -10,6 +10,10 @@ namespace OnlineVegeFoodOrder
     {
         static void Main(string[] args)
         {
+            var account = new SiteAccount { Name = "Yue", Email = "yueyue.qin1007@gmail.com", Address = "Seattle,WA" };
+            account.AddFoodItem("Rice Noodle", "Spicy");
+            Console.WriteLine(account.FoodItemList);
+            Console.ReadLine();
         }
     }
 }
